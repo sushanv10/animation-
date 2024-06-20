@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Menu</title>
+    <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.accordion {
+    width: 300px;
+}
+
+.accordion-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-header {
+    padding: 15px;
+    cursor: pointer;
+    background: #3498db;
+    color: white;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background: #f9f9f9;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 150px;
+    padding: 15px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">Section 1</div>
+            <div class="accordion-content">
+                <p>Content for section 1.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">Section 2</div>
+            <div class="accordion-content">
+                <p>Content for section 2.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">Section 3</div>
+            <div class="accordion-content">
+                <p>Content for section 3.</p>
+            </div>
+        </div>
+    </div>
+    <script >
+        // script.js
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const accordionItem = header.parentElement;
+        const currentlyActiveItem = document.querySelector('.accordion-item.active');
+        
+        if (currentlyActiveItem && currentlyActiveItem !== accordionItem) {
+            currentlyActiveItem.classList.remove('active');
+        }
+        
+        accordionItem.classList.toggle('active');
+    });
+});
+
+
+    </script>
+</body>
+</html>

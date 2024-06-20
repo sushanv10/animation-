@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Card</title>
+    <style>
+        /* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.card-container {
+    perspective: 1000px;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: center left;
+    transition: transform 0.8s ease;
+}
+
+.card:hover {
+    transform: rotateY(-180deg);
+}
+
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    z-index: 1;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <img src="uno1.png" alt="Front Image">
+            </div>
+            <div class="back">
+                <img src="uno2.jpg" alt="Back Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

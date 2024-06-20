@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade-In Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: calc(33.333% - 20px);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.gallery-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.gallery-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.gallery-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.gallery-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.gallery-item:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.gallery-item:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="image copy 2.png" alt="Image 1" class="gallery-item">
+        <img src="image copy 3.png" alt="Image 2" class="gallery-item">
+        <img src="image copy 4.png" alt="Image 3" class="gallery-item">
+        <img src="image copy 5.png" alt="Image 4" class="gallery-item">
+        <img src="image copy 6.png" alt="Image 5" class="gallery-item">
+        <img src="image copy 7.png" alt="Image 6" class="gallery-item">
+    </div>
+</body>
+</html>

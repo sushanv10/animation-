@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            background-image: url("image copy.png");
+            background-size: cover;
+            height: 400px;
+            width: 400px;
+            margin-top: 120px;
+            margin-left: 500px;
+
+        }
+
+        .container img{
+            height: 100px;
+            animation: slideBottom 2s  ease-in-out infinite normal;
+            /* animation-delay: 2s ; */
+            
+
+
+        }
+
+        @keyframes slideBottom{
+            0%{
+                
+                transform: translateY(0%);
+
+            }
+
+            50%{
+                
+                transform: translateY(305px);
+            }
+
+            
+
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="image.png">
+
+    </div>
+    
+</body>
+</html>

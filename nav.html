@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Navigation Menu</title>
+<style>
+  .menu {
+    width: 200px;
+    background-color: #333;
+    overflow: hidden;
+    position: absolute;
+    left: -200px;
+    transition: left 0.5s;
+  }
+  .menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  .menu a:hover {
+    background-color: #575757;
+  }
+  .menu-button {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+  }
+  .menu-open .menu {
+    left: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="menu">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="menu-button" onclick="toggleMenu()">☰ Menu</div>
+
+<script>
+  function toggleMenu() {
+    document.body.classList.toggle('menu-open');
+  }
+</script>
+
+</body>
+</html>
